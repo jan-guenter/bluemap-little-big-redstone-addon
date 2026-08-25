@@ -6,13 +6,15 @@ package io.github.janguenter.bluemap.littlebigredstone.adapter.bluemap522;
 
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.ResourcePack;
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.ResourcePackExtension;
+import de.bluecolored.bluemap.core.util.Key;
 import io.github.janguenter.bluemap.littlebigredstone.activation.AddonRuntime;
 import io.github.janguenter.bluemap.littlebigredstone.profile.ExactArtifactDetector;
 import io.github.janguenter.bluemap.littlebigredstone.profile.LittleBigRedstone198Profile;
 
 import java.nio.file.Path;
+import java.util.Set;
 
-/** Exact-artifact admission hook; family routing deliberately remains stock. */
+/** Exact-artifact admission hook for Little Big Redstone microchip models. */
 final class ProfileResourceExtension implements ResourcePackExtension {
 
     private final ResourcePack resourcePack;
@@ -34,12 +36,24 @@ final class ProfileResourceExtension implements ResourcePackExtension {
             return;
         }
 
-        // SCAFFOLD_NOT_IMPLEMENTED: validate installed resources, register the
-        // family renderer, route only owned hosts, then call runtime.activate().
-        if (resourcePack.getBlockStates() == null) {
-            runtime.fail("resource-pack-unavailable");
+        if (!InstalledMicrochipModels.install(resourcePack)) {
+            runtime.inactive("required-installed-resource-missing");
             return;
         }
-        runtime.inactive("family-renderer-not-implemented");
+        runtime.activate();
+    }
+
+    @Override
+    public Set<Key> collectUsedTextureKeys() {
+        return runtime.active() ? MicrochipCatalog.textureKeys() : Set.of();
+    }
+
+    @Override
+    public void bake() {
+        if (runtime.active()) {
+            System.out.println(
+                    "BlueMap Little Big Redstone add-on active: 16 microchip models."
+            );
+        }
     }
 }

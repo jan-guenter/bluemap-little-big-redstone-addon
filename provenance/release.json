@@ -1,10 +1,76 @@
 {
-  "accepted_staging_entries": null,
-  "final_release_artifacts": null,
-  "note": "Populate only after owner visual acceptance; this file is not packaged.",
-  "owner_accepted_staging": null,
-  "repository": "https://github.com/jan-guenter/bluemap-little-big-redstone-addon",
   "schema_version": 1,
-  "status": "prototype-not-owner-accepted",
-  "version": "0.1.0-SNAPSHOT"
+  "status": "owner-accepted-release-candidate",
+  "version": "0.1.0-alpha.1",
+  "release_date": "2026-08-25",
+  "repository": "https://github.com/jan-guenter/bluemap-little-big-redstone-addon",
+  "tag": "v0.1.0-alpha.1",
+  "maven_coordinate": "io.github.jan-guenter:bluemap-little-big-redstone-addon:0.1.0-alpha.1",
+  "owner_accepted_staging": {
+    "commit": "4395fa2cb9c78961d7beb15617ebe2b1b66ff0bd",
+    "tree": "eb2352ad29409e1c444946046e9e3658d9c0a882",
+    "production_jar_size": 54659,
+    "production_jar_sha256": "53a65f5a74f4b8e7281367f2496771fb1f00c591e71c755cef48a09ac383d4dd",
+    "accepted_at": "2026-08-25",
+    "visual_acceptance": true,
+    "gallery_archive_size": 2469,
+    "gallery_archive_sha256": "cf2f3b370ef25ee2f3cbbef7d3c92b5a6d56e27f80985bee917346fd8a8ffe26",
+    "fixtures": 17
+  },
+  "accepted_staging_entries": {
+    "path": "provenance/accepted-staging-entries.sha256",
+    "entry_count": 22,
+    "sha256": "2a1a6818421bd978184f8f52e73ee4d646d37b138fb740c6d37cff777deb9561"
+  },
+  "final_release_artifacts": {
+    "production_jar": {
+      "file_name": "bluemap-little-big-redstone-addon-0.1.0-alpha.1.jar",
+      "size": 54658,
+      "sha256": "d3bf3ee012b5a00e3f1d546429c1f7f72a183e27e38088deaae9654a9d4750a5"
+    },
+    "sources_jar": {
+      "file_name": "bluemap-little-big-redstone-addon-0.1.0-alpha.1-sources.jar",
+      "size": 38436,
+      "sha256": "acb64bab01d29e8926acb215677e932c330e02c382f0807bd93976dcddb7d74f"
+    },
+    "pom": {
+      "file_name": "bluemap-little-big-redstone-addon-0.1.0-alpha.1.pom",
+      "size": 1389,
+      "sha256": "900fa602d948bc1ce790b86670e44a07fc529b5acc8791233ad5a3a34f5ca800"
+    },
+    "gradle_module": {
+      "file_name": "bluemap-little-big-redstone-addon-0.1.0-alpha.1.module.json",
+      "size": 2901,
+      "sha256": "14050ff87f40d87da5a08c53134b59777550ed100013af07465fc121fcc65272"
+    }
+  },
+  "staged_equivalence": {
+    "entry_manifest": "provenance/accepted-staging-entries.sha256",
+    "identical_non_manifest_entries": 22,
+    "whole_jar_byte_identical": false,
+    "only_changed_entry_bytes": "META-INF/MANIFEST.MF",
+    "change_reason": "Implementation-Version changed from the accepted SNAPSHOT marker to the final release version."
+  },
+  "gallery": {
+    "archive_file_name": "bluemap-little-big-redstone-gallery.zip",
+    "size": 2469,
+    "sha256": "cf2f3b370ef25ee2f3cbbef7d3c92b5a6d56e27f80985bee917346fd8a8ffe26",
+    "fixtures": 17,
+    "published_as_release_asset": false
+  },
+  "ephemeral_ci_inputs": {
+    "little_big_redstone": {
+      "curseforge_project": 1180560,
+      "curseforge_file": 8550720,
+      "size": 1415860,
+      "sha256": "ba4eac4050528c274db4b8b43c38152ef58407298f499d28b13c97a7ca8a0896"
+    },
+    "policy": "Downloaded only into the ephemeral runner, verified before use, and never bundled or uploaded."
+  },
+  "verification": {
+    "production_jar_exact_byte_gate": true,
+    "sources_jar_exact_byte_gate": true,
+    "publication_metadata_exact_byte_gate": true,
+    "exact_input_gate": true
+  }
 }
