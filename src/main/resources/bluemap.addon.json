@@ -1,0 +1,6 @@
+{
+  "id": "bluemap-little-big-redstone",
+  "entrypoint": "io.github.janguenter.bluemap.littlebigredstone.BlueMapLittleBigRedstoneAddon",
+  "dependencies": [],
+  "soft-dependencies": []
+}

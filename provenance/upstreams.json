@@ -1,0 +1,37 @@
+{
+  "artifacts": [
+    {
+      "curseforge_file": 8550720,
+      "curseforge_project": 1180560,
+      "download_url": "https://www.curseforge.com/api/v1/mods/1180560/files/8550720/download",
+      "evidence": "All the Mons 1.2.0 disposable staging runtime JAR was hash-verified; CurseForge 1180560/8550720 and Modrinth cdz2XZgU/eOMQgt8x identify the same filename, size, version, loader, and SHA-1",
+      "evidence_tier": "T2_ARTIFACT_EXACT",
+      "file_name": "little-big-redstone-1.9.8-1.21.1.jar",
+      "key": "littleBigRedstone",
+      "license": "MIT License",
+      "mod_id": "little_big_redstone",
+      "redistributed": false,
+      "sha1": "fca25aa42461ead4c61cf147d7f3c5c82399d8dd",
+      "sha256": "ba4eac4050528c274db4b8b43c38152ef58407298f499d28b13c97a7ca8a0896",
+      "size": 1415860,
+      "version": "1.9.8-1.21.1"
+    }
+  ],
+  "bluemap": {
+    "api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
+    "commit": "9be321df995a1103808621d529eb72773e719d4d",
+    "license": "MIT",
+    "redistributed": false,
+    "version": "5.22-agent.backport-5.22-mc1.21.1-2"
+  },
+  "pack": {
+    "commit": "c7bb230f21d14d26859d0b92548f089b3a493ad9",
+    "minecraft": "1.21.1",
+    "name": "All the Mons",
+    "neoforge": "21.1.248",
+    "version": "1.2.0"
+  },
+  "profile": "little-big-redstone-1.9.8-mc1.21.1",
+  "schema": 1,
+  "source_use": "Runtime interfaces and installed resources may be interpreted only after family-specific evidence is recorded; no candidate classes, assets, binaries, source, or captured meshes are packaged."
+}

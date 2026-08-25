@@ -1,0 +1,379 @@
+{
+  "deterministic": true,
+  "family_id": "little_big_redstone",
+  "generator": "bluemap-java21-addon-scaffold-v1",
+  "initial_files": [
+    {
+      "mode": "0644",
+      "path": ".gitattributes",
+      "sha256": "c0b5802900ed076871e7878f051eb2cd8d7918dbfada3f40f86300fa7325252d",
+      "size": 58
+    },
+    {
+      "mode": "0644",
+      "path": ".github/workflows/ci.yml",
+      "sha256": "edf22d1cf3270df3fe06aa69d0d055f91a8a91437870dc95d4f5063d3f233c50",
+      "size": 4448
+    },
+    {
+      "mode": "0644",
+      "path": ".github/workflows/release.yml",
+      "sha256": "e4ddd70998e58eb6fc8f3fc2246af5ace8851246a21d5d4c10c86c75399a54cf",
+      "size": 6609
+    },
+    {
+      "mode": "0644",
+      "path": ".gitignore",
+      "sha256": "a5030053f21da04c319ab8abe4020d2ee1d488430e79f0b8ce04f1d7f29a93f6",
+      "size": 105
+    },
+    {
+      "mode": "0644",
+      "path": "AGENTS.md",
+      "sha256": "da1c758b6ea62a662469a7f751562ce4593cea2dcd9e56888e68f0a996262d85",
+      "size": 2138
+    },
+    {
+      "mode": "0644",
+      "path": "CHANGELOG.md",
+      "sha256": "c42ad3ce812e27d3ea3146639ef1f2b6311f13a8a32009946b24a1b6e9dcf72e",
+      "size": 216
+    },
+    {
+      "mode": "0644",
+      "path": "LICENSE",
+      "sha256": "f079a10f7ddfae72170c16c8be18685f05e36309955c3858e9f863d4cae7cfce",
+      "size": 1068
+    },
+    {
+      "mode": "0644",
+      "path": "LICENSE-BlueMap",
+      "sha256": "f1c190d4a1ff29606cbed7a0d97fc7b7117cc2e1169e19caa753198957dbbfd6",
+      "size": 1122
+    },
+    {
+      "mode": "0644",
+      "path": "NOTICE.md",
+      "sha256": "fd561f4db270f0c8fb006ea38828e840b3f33ecf18ec61d7558904b1f8174a01",
+      "size": 434
+    },
+    {
+      "mode": "0644",
+      "path": "README.md",
+      "sha256": "bd9ae216c6d90cf0da27b9db10534d4a3a9cc8422228bf801844018c45fd45c7",
+      "size": 1576
+    },
+    {
+      "mode": "0644",
+      "path": "THIRD_PARTY.md",
+      "sha256": "745890f76b253be109a8ec25ffca3e927171cc23a4fcc2f4aa7c8772fd54d20b",
+      "size": 632
+    },
+    {
+      "mode": "0644",
+      "path": "build.gradle",
+      "sha256": "9fe9e5ac0a48f4f13916b5957efeb292896ab670efd13c01d24afa5067806a3e",
+      "size": 19723
+    },
+    {
+      "mode": "0644",
+      "path": "config/checkstyle/checkstyle.xml",
+      "sha256": "77fe7b6d9a70f527daf7288ad2955e467f1059ef75b0c3d0d63694c8bea285d7",
+      "size": 791
+    },
+    {
+      "mode": "0644",
+      "path": "docs/EXECUTION.md",
+      "sha256": "daef640915174c0f93199c26c494fbd1763a8584a7563acaf12d3098e841c59e",
+      "size": 2077
+    },
+    {
+      "mode": "0644",
+      "path": "docs/RELEASING.md",
+      "sha256": "7488e66595e35648c172f99f43104e5dc8bdc99569a106b25bb628ef7f4b4b5d",
+      "size": 1522
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/README.md",
+      "sha256": "2fd75c444287a1a0f8f13a3d8cb982c675558626ef20af58e9fe25c4f0c62a8e",
+      "size": 681
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/SHA256SUMS",
+      "sha256": "7248b0f7ed62e4d3ca0079084ff71e4ecb6b1a95ed57bd340619af8adcaa4011",
+      "size": 954
+    },
+    {
+      "mode": "0755",
+      "path": "gallery/cases.py",
+      "sha256": "685e6e9636a9c878793e17a648764b2154dbd1a3ad790bc3c82fd22f2f9c2f89",
+      "size": 771
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/data/little_big_redstone_gallery/function/build.mcfunction",
+      "sha256": "5adac7b483ba3c585db8b6b7dc4940b68416bae903af1937c3e411b47ab0e577",
+      "size": 220
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/data/little_big_redstone_gallery/function/clear.mcfunction",
+      "sha256": "4507683d949af7e2312781de5e2ef0cb5d090ff6584e08f003a406bb4586b5d3",
+      "size": 91
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/data/little_big_redstone_gallery/function/load.mcfunction",
+      "sha256": "765e232cd0787cf3608ecdb5f804629d8477b923d96dc33b67a0a33fda7c9e94",
+      "size": 184
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/data/little_big_redstone_gallery/function/release.mcfunction",
+      "sha256": "aba4de6cf0db4fab8faf08beb1b567ccfff7e4ff6170771979be5cb394bee3b9",
+      "size": 92
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/data/little_big_redstone_gallery/function/verify.mcfunction",
+      "sha256": "c36c18c1fc8e1296a672d8b4f2c0a5aaebfa161cb8ae575f04daf017940b2f5a",
+      "size": 257
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/data/minecraft/tags/function/load.json",
+      "sha256": "2a0dcc1891a662622ecbf9095d9611a409d9c361673f4abc11652418798c2630",
+      "size": 61
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/datapack/pack.mcmeta",
+      "sha256": "4231681d655270fbe6adf8f4752b974c7da3f430302ea5f4cddc0427323ab473",
+      "size": 114
+    },
+    {
+      "mode": "0755",
+      "path": "gallery/generate.py",
+      "sha256": "fdc8d8259df3a5d718e6d4399129e07b9d897492a3e5ae305e190a6af5ad46b7",
+      "size": 4829
+    },
+    {
+      "mode": "0755",
+      "path": "gallery/lint.py",
+      "sha256": "b970deb190d8597b0b0c07429be2898edd5bad6cef5c35e0f5b4bdfad7d58982",
+      "size": 2469
+    },
+    {
+      "mode": "0755",
+      "path": "gallery/package.sh",
+      "sha256": "5ddeecbeeeda8c1a7721d2e1d757374fb36db8652343b51896b1d57fd80812cc",
+      "size": 1327
+    },
+    {
+      "mode": "0644",
+      "path": "gallery/placements.tsv",
+      "sha256": "b56ee047c4aa36d26a7ca29b867a4bee61e3fa5aa25f0c4247ee46ca07cff797",
+      "size": 127
+    },
+    {
+      "mode": "0644",
+      "path": "gradle.properties",
+      "sha256": "65c7b90889515837daf40066da35320cf26f1467ad88df937056c63e5f4322e4",
+      "size": 621
+    },
+    {
+      "mode": "0644",
+      "path": "provenance/release.json",
+      "sha256": "5c9f4dbd8c639d3dcbfa968bb51c10f23d9bf56d48d4f11c98269651e3e4a98b",
+      "size": 375
+    },
+    {
+      "mode": "0644",
+      "path": "provenance/upstreams.json",
+      "sha256": "13b0c7260a1536402c8efc2d0564af10dd9827343d9ff38434806bcba69fecb2",
+      "size": 1548
+    },
+    {
+      "mode": "0644",
+      "path": "settings.gradle",
+      "sha256": "064f2ee4a325bc7813468cec397f5c8003a8484e6e041907b0e1d758e1f1b7bf",
+      "size": 1438
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/littlebigredstone/BlueMapLittleBigRedstoneAddon.java",
+      "sha256": "3695efeebbf03e089d85aa35af2530e2869aeb85c9c34310a2c971e4ca7f04b5",
+      "size": 1600
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/littlebigredstone/activation/AddonRuntime.java",
+      "sha256": "45090a0ae632e4715597785469ea738842f3513ee01ca2da020eb89d1788a31c",
+      "size": 2175
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap522/AdapterCompatibility.java",
+      "sha256": "52ea19877201b52926e27feea621129ea10ed5a280b3dc7a5fa6375d54f207dc",
+      "size": 1047
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap522/BlueMap522Adapter.java",
+      "sha256": "be28f37fba02dba602966c456e885f3370c5a44272a39e65fba853bf3fd30cff",
+      "size": 1154
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap522/ProfileResourceExtension.java",
+      "sha256": "e333eb11562f7cca1922374404db9a34cf523def5d644c652905ef3de8637809",
+      "size": 1751
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap522/ProfileResourceExtensionType.java",
+      "sha256": "ba699216e0e9851ec4c63e8711401db04a4091b08dcf9fb19bf34f7db70d1ce0",
+      "size": 950
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap522/RegistryGuard.java",
+      "sha256": "df58c7ee157e1889766176481b68b7afb570b27cde7e5e516df4e6e6b64abb41",
+      "size": 884
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/littlebigredstone/profile/ArtifactPin.java",
+      "sha256": "b7676f879ffded94df011eaa6e0401792e7ec5414e797a27062c56792c9e2a93",
+      "size": 1379
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/littlebigredstone/profile/ExactArtifactDetector.java",
+      "sha256": "7001c1b79e58bbf749287b1120df0025debc620b647990c02a8254b4d935f98a",
+      "size": 9970
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/java/io/github/janguenter/bluemap/littlebigredstone/profile/LittleBigRedstone198Profile.java",
+      "sha256": "d70ef10c0f4573eca0595ea9d85c25ef8c82da3406a3e46ea71bbfd7fbe604c7",
+      "size": 804
+    },
+    {
+      "mode": "0644",
+      "path": "src/main/resources/bluemap.addon.json",
+      "sha256": "2c1dea59f80df2263f87e806814c099e80bf558989959079bfed5f43aa931224",
+      "size": 187
+    },
+    {
+      "mode": "0644",
+      "path": "src/test/java/io/github/janguenter/bluemap/littlebigredstone/activation/AddonRuntimeTest.java",
+      "sha256": "fabc7d2fdbabce36105fe0c0443aff80fb889c609f5646d5c2b7a81e9a17a4b1",
+      "size": 1083
+    },
+    {
+      "mode": "0644",
+      "path": "src/test/java/io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap522/AdapterCompatibilityTest.java",
+      "sha256": "2a965a7da39a4102164c7f234565f922cad33d19488ae380c7b6e847fba97fa3",
+      "size": 971
+    },
+    {
+      "mode": "0644",
+      "path": "src/test/java/io/github/janguenter/bluemap/littlebigredstone/profile/ExactArtifactDetectorTest.java",
+      "sha256": "0add1b88acfdf54b63eaa6d50701a4d17f923fece1761ec38acb3305d5341cbd",
+      "size": 3432
+    },
+    {
+      "mode": "0755",
+      "path": "tools/verify_pinned_artifacts.py",
+      "sha256": "dc7c6d80796f9d5773183a499aa61320a0126ac21f1fdb5c8e872bbf618ca798",
+      "size": 3508
+    },
+    {
+      "mode": "0755",
+      "path": "tools/verify_staged_equivalence.py",
+      "sha256": "cc8fa6cb1e79b85555b9f10920909b0c03fdc8d78445e07c877674e513fcff9f",
+      "size": 4441
+    }
+  ],
+  "repository": "bluemap-little-big-redstone-addon",
+  "schema": 1,
+  "spec_sha256": "ef74aeae65a55e64306339c1629179758b7583391a6324bd47168970da8af415",
+  "steps": [
+    {
+      "description": "Validate the reviewed scaffold spec.",
+      "id": "validate-spec",
+      "number": 1,
+      "status": "complete"
+    },
+    {
+      "description": "Render and byte-audit the deterministic seed.",
+      "id": "render-seed",
+      "number": 2,
+      "status": "complete"
+    },
+    {
+      "description": "Initialize the independent child repository and feature branch.",
+      "id": "initialize-repository",
+      "number": 3,
+      "status": "pending"
+    },
+    {
+      "description": "Acquire exact candidate artifacts outside Git and verify their identities.",
+      "id": "acquire-artifacts",
+      "number": 4,
+      "status": "pending"
+    },
+    {
+      "description": "Verify Java 21 and exact BlueMap, API, pack, and loader pins.",
+      "id": "verify-baseline",
+      "number": 5,
+      "status": "pending"
+    },
+    {
+      "description": "Implement family-owned registration, profile, decoder, and renderer.",
+      "id": "implement-family",
+      "number": 6,
+      "status": "pending"
+    },
+    {
+      "description": "Add focused compatibility, decoder, geometry, and fallback tests.",
+      "id": "focused-tests",
+      "number": 7,
+      "status": "pending"
+    },
+    {
+      "description": "Replace the stock-only gallery with the smallest defect fixture.",
+      "id": "defect-gallery",
+      "number": 8,
+      "status": "pending"
+    },
+    {
+      "description": "Build a prototype and deploy it promptly to disposable staging.",
+      "id": "stage-prototype",
+      "number": 9,
+      "status": "pending"
+    },
+    {
+      "description": "Obtain owner comparison and visual acceptance in client and BlueMap.",
+      "id": "owner-acceptance",
+      "number": 10,
+      "status": "pending"
+    },
+    {
+      "description": "Seal staging and publication identities and run the release gate.",
+      "id": "seal-release",
+      "number": 11,
+      "status": "pending"
+    },
+    {
+      "description": "Merge, tag, publish, verify, and update root coordination.",
+      "id": "publish-coordinate",
+      "number": 12,
+      "status": "pending"
+    }
+  ],
+  "template_sha256": "96f6497d2ea982ea702c0208ddf202393bb331b1b24f6600bd9a328ca62f4540"
+}
