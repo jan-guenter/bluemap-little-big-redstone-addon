@@ -3,9 +3,10 @@
 A Java 21 BlueMap add-on for the exact `little-big-redstone-1.9.8-mc1.21.1` profile in All the Mons
 `1.2.0` / Minecraft `1.21.1`.
 
-Status: comparison prototype. The exact artifact gate replaces the unsupported
-dynamic models for all sixteen colored microchips with static cubes using the
-installed top, side, and bottom textures.
+Status: owner-accepted `0.1.0-alpha.1` release candidate. The exact artifact
+gate replaces the unsupported dynamic models for all sixteen colored
+microchips with static cubes using the installed top, side, and bottom
+textures.
 
 ## Build
 
@@ -20,9 +21,9 @@ the [execution guide](docs/EXECUTION.md) for the prototype-to-release loop.
 
 ## Install
 
-After a renderer exists, place the production JAR in BlueMap's add-on pack
-directory and restart the BlueMap JVM. Removal plus one restart restores stock
-behavior; the add-on creates no custom world state.
+Place the production JAR in BlueMap's add-on pack directory and restart the
+BlueMap JVM. Removal plus one restart restores stock behavior; the add-on
+creates no custom world state.
 
 Set `-Dbluemap.little_big_redstone.disabled=true` to leave the exact profile inactive.
 
