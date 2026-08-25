@@ -66,11 +66,6 @@ final class InstalledMicrochipModels {
             if (original == null) {
                 return false;
             }
-            if (pack.getTextures().get(MicrochipCatalog.sideTextureKey(color)) == null
-                    || pack.getTextures().get(MicrochipCatalog.topTextureKey(color)) == null
-                    || pack.getTextures().get(MicrochipCatalog.bottomTextureKey(color)) == null) {
-                return false;
-            }
         }
         return true;
     }
