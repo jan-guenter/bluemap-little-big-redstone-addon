@@ -3,11 +3,9 @@
 A Java 21 BlueMap add-on for the exact `little-big-redstone-1.9.8-mc1.21.1` profile in All the Mons
 `1.2.0` / Minecraft `1.21.1`.
 
-Status: safe generated prototype. The exact artifact gate and BlueMap 5.22
-adapter compile, but the family-owned renderer is intentionally absent.
-BlueMap therefore retains stock rendering until the explicit
-`SCAFFOLD_NOT_IMPLEMENTED` markers are replaced. A release cannot pass while
-those markers remain.
+Status: comparison prototype. The exact artifact gate replaces the unsupported
+dynamic models for all sixteen colored microchips with static cubes using the
+installed top, side, and bottom textures.
 
 ## Build
 
@@ -16,7 +14,7 @@ gradle --no-daemon -PbluemapSourcePath=../bluemap-backport clean check build
 ```
 
 `check` is the quick Java/checkstyle/archive gate. `prototypeCheck` additionally
-requires every exact candidate JAR property and validates the placeholder
+requires every exact candidate JAR property and validates the comparison
 gallery. See `provenance/upstreams.json` for immutable artifact identities and
 the [execution guide](docs/EXECUTION.md) for the prototype-to-release loop.
 
@@ -30,10 +28,9 @@ Set `-Dbluemap.little_big_redstone.disabled=true` to leave the exact profile ina
 
 ## Scope boundary
 
-The initial implementation must be limited to a small observed BlueMap defect.
-Live contents, fill levels, activity overlays, particles, animation phase, and
-unsupported states stay stock or deterministic-neutral unless the owner
-explicitly expands scope.
+The first implementation covers the neutral microchip shell only. Live logic,
+port and signal overlays, contents, particles, and animation stay
+deterministic-neutral.
 
 No Little Big Redstone binary, source, class, asset, captured mesh, or gallery is
 bundled in the add-on.

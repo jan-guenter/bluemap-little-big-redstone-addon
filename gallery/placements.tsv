@@ -1,2 +1,18 @@
 case_id	label	x	y	z	block_state	expected
-stock-control	stone stock rendering control	176	100	175	minecraft:stone	stock-visible
+microchip-white	white microchip neutral shell	176	100	176	little_big_redstone:white_microchip	installed-texture-cube-visible
+microchip-orange	orange microchip neutral shell	179	100	176	little_big_redstone:orange_microchip	installed-texture-cube-visible
+microchip-magenta	magenta microchip neutral shell	182	100	176	little_big_redstone:magenta_microchip	installed-texture-cube-visible
+microchip-light_blue	light_blue microchip neutral shell	185	100	176	little_big_redstone:light_blue_microchip	installed-texture-cube-visible
+microchip-yellow	yellow microchip neutral shell	176	100	179	little_big_redstone:yellow_microchip	installed-texture-cube-visible
+microchip-lime	lime microchip neutral shell	179	100	179	little_big_redstone:lime_microchip	installed-texture-cube-visible
+microchip-pink	pink microchip neutral shell	182	100	179	little_big_redstone:pink_microchip	installed-texture-cube-visible
+microchip-gray	gray microchip neutral shell	185	100	179	little_big_redstone:gray_microchip	installed-texture-cube-visible
+microchip-light_gray	light_gray microchip neutral shell	176	100	182	little_big_redstone:light_gray_microchip	installed-texture-cube-visible
+microchip-cyan	cyan microchip neutral shell	179	100	182	little_big_redstone:cyan_microchip	installed-texture-cube-visible
+microchip-purple	purple microchip neutral shell	182	100	182	little_big_redstone:purple_microchip	installed-texture-cube-visible
+microchip-blue	blue microchip neutral shell	185	100	182	little_big_redstone:blue_microchip	installed-texture-cube-visible
+microchip-brown	brown microchip neutral shell	176	100	185	little_big_redstone:brown_microchip	installed-texture-cube-visible
+microchip-green	green microchip neutral shell	179	100	185	little_big_redstone:green_microchip	installed-texture-cube-visible
+microchip-red	red microchip neutral shell	182	100	185	little_big_redstone:red_microchip	installed-texture-cube-visible
+microchip-black	black microchip neutral shell	185	100	185	little_big_redstone:black_microchip	installed-texture-cube-visible
+stock-control	stone stock rendering control	190	100	185	minecraft:stone	stock-visible
