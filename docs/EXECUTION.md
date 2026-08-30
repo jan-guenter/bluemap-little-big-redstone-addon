@@ -4,12 +4,13 @@ This repository starts inactive and stock-safe. Implement only the smallest
 observed Little Big Redstone rendering defect before staging.
 
 Before running Gradle gates, activate a Python 3.11 or newer virtual
-environment, initialize the exact development-tool and runtime-module
-submodules, and install the matching toolkit wheel into the environment:
+environment, initialize the exact development-tool, runtime-module, and
+Adapter API submodules, and install the matching toolkit wheel:
 
 ```bash
 git submodule update --init --recursive -- \
-  tooling/bluemap-addon-toolkit modules/bluemap-addon-runtime
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-runtime \
+  modules/bluemap-addon-adapter-api
 python -m pip install --disable-pip-version-check --no-deps \
   --require-hashes --only-binary=:all: \
   --requirement requirements/toolkit.txt
@@ -19,6 +20,11 @@ The runtime submodule contributes its two artifact-admission Java sources to
 this add-on at compile time. Its gitlink pins `v0.1.0-alpha.1` commit
 `6c062239f2669de9d20da32dc8b5372a5653b19d`. Do not install or bundle the
 runtime module JAR.
+
+The Adapter API gitlink pins `v0.1.0-alpha.2` commit
+`e81f08bc4bfbf02d810ec8949a019130e2e61634` and source tree
+`2f974c9bb2ba13888d69682f86f30f58922d30eb`. Its four Java sources compile
+into this add-on. Do not install or bundle its module JAR.
 
 ## Prototype
 
