@@ -16,6 +16,7 @@ base {
 
 sourceSets {
     main.java.srcDir 'modules/bluemap-addon-runtime/src/main/java'
+    main.java.srcDir 'modules/bluemap-addon-adapter-api/src/main/java'
 }
 
 repositories {
@@ -114,6 +115,27 @@ def sharedRuntimeSources = [
         "${sharedRuntimePackage}ArtifactPin.java",
         "${sharedRuntimePackage}ExactArtifactDetector.java"
 ].collect { it.toString() }
+def sharedAdapterApiPackage =
+        'io/github/janguenter/bluemap/addon/adapter/api/bluemap523/'
+def sharedAdapterApiClasses = [
+        'BlueMapRuntimeCompatibility.class',
+        'RegistryGuard.class',
+        'ResourceExtensionType.class',
+        'SyntheticDispatch.class'
+].collect { sharedAdapterApiPackage + it }
+def sharedAdapterApiSources = [
+        'BlueMapRuntimeCompatibility.java',
+        'RegistryGuard.java',
+        'ResourceExtensionType.java',
+        'SyntheticDispatch.java'
+].collect { sharedAdapterApiPackage + it }
+def legacyAdapterPackage =
+        'io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap522/'
+def displacedAdapterHelpers = [
+        'io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap523/AdapterCompatibility',
+        'io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap523/ProfileResourceExtensionType',
+        'io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap523/RegistryGuard'
+]
 
 tasks.register('verifyGeneratedGallery', Exec) {
     commandLine 'python3', 'gallery/generate.py', '--check'
@@ -157,14 +179,17 @@ tasks.register('verifyProductionJar') {
             def required = [
                     'bluemap.addon.json',
                     'io/github/janguenter/bluemap/littlebigredstone/BlueMapLittleBigRedstoneAddon.class',
+                    'io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap523/BlueMap523Adapter.class',
                     'META-INF/LICENSE-bluemap-little-big-redstone-addon',
                     'META-INF/LICENSE-BlueMap',
                     'META-INF/NOTICE-bluemap-little-big-redstone-addon.md',
                     'META-INF/THIRD_PARTY-bluemap-little-big-redstone-addon.md',
                     'META-INF/bluemap-little-big-redstone/upstreams.json'
-            ] + sharedRuntimeClasses
+            ] + sharedRuntimeClasses + sharedAdapterApiClasses
             def missing = required.findAll { !entries.contains(it) }
             def duplicateShared = sharedRuntimeClasses.findAll { shared ->
+                entries.count { it == shared } != 1
+            } + sharedAdapterApiClasses.findAll { shared ->
                 entries.count { it == shared } != 1
             }
             if (!missing.isEmpty() || !duplicateShared.isEmpty()) {
@@ -192,6 +217,8 @@ tasks.register('verifyProductionJar') {
                         || entry.startsWith('net/minecraft/')
                         || entry.startsWith('net/neoforged/')
                         || entry.startsWith('gallery/')
+                        || entry.startsWith(legacyAdapterPackage)
+                        || displacedAdapterHelpers.any { helper -> entry.startsWith(helper) }
                         || entry.endsWith('/bootstrap.json')
                         || entry.startsWith(
                             'io/github/janguenter/bluemap/littlebigredstone/profile/ArtifactPin'
@@ -201,9 +228,12 @@ tasks.register('verifyProductionJar') {
                         )
                         || (entry.startsWith(sharedRuntimePackage)
                             && !sharedRuntimeClasses.contains(entry))
+                        || (entry.startsWith(sharedAdapterApiPackage)
+                            && !sharedAdapterApiClasses.contains(entry))
                         || (entry.endsWith('.class')
                             && !entry.startsWith('io/github/janguenter/bluemap/littlebigredstone/')
-                            && !sharedRuntimeClasses.contains(entry))
+                            && !sharedRuntimeClasses.contains(entry)
+                            && !sharedAdapterApiClasses.contains(entry))
                         || candidateIds.any { entry.startsWith("assets/${it}/") }
             }
             if (!forbidden.isEmpty()) {
@@ -226,19 +256,24 @@ tasks.register('verifySourcesJar') {
             def entries = zip.entries().findAll { !it.directory }.collect { it.name }
             def required = [
                     'io/github/janguenter/bluemap/littlebigredstone/BlueMapLittleBigRedstoneAddon.java',
+                    'io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap523/BlueMap523Adapter.java',
+                    'io/github/janguenter/bluemap/littlebigredstone/adapter/bluemap523/InstalledMicrochipModels.java',
                     'bluemap.addon.json',
                     'META-INF/LICENSE-bluemap-little-big-redstone-addon',
                     'META-INF/LICENSE-BlueMap',
                     'META-INF/bluemap-little-big-redstone/upstreams.json'
-            ] + sharedRuntimeSources
+            ] + sharedRuntimeSources + sharedAdapterApiSources
             def missing = required.findAll { !entries.contains(it) }
             def duplicateShared = sharedRuntimeSources.findAll { shared ->
+                entries.count { it == shared } != 1
+            } + sharedAdapterApiSources.findAll { shared ->
                 entries.count { it == shared } != 1
             }
             def projectJava = entries.findAll { it.endsWith('.java') }
             def foreignJava = projectJava.findAll {
                 !it.startsWith('io/github/janguenter/bluemap/littlebigredstone/')
                         && !sharedRuntimeSources.contains(it)
+                        && !sharedAdapterApiSources.contains(it)
             }
             def candidateIds = new groovy.json.JsonSlurper()
                     .parse(file('provenance/upstreams.json')).artifacts*.mod_id
@@ -251,11 +286,15 @@ tasks.register('verifySourcesJar') {
                         || entry.startsWith('net/minecraft/')
                         || entry.startsWith('net/neoforged/')
                         || entry.startsWith('gallery/')
+                        || entry.startsWith(legacyAdapterPackage)
+                        || displacedAdapterHelpers.any { helper -> entry == "${helper}.java" }
                         || entry.endsWith('/bootstrap.json')
                         || entry == 'io/github/janguenter/bluemap/littlebigredstone/profile/ArtifactPin.java'
                         || entry == 'io/github/janguenter/bluemap/littlebigredstone/profile/ExactArtifactDetector.java'
                         || (entry.startsWith(sharedRuntimePackage)
                             && !sharedRuntimeSources.contains(entry))
+                        || (entry.startsWith(sharedAdapterApiPackage)
+                            && !sharedAdapterApiSources.contains(entry))
                         || candidateIds.any { entry.startsWith("assets/${it}/") }
             }
             if (!missing.isEmpty()
@@ -415,6 +454,7 @@ tasks.register('verifyReleaseMetadata') {
         def release = new groovy.json.JsonSlurper()
                 .parse(file('provenance/release.json'))
         def expectedRepository = 'https://github.com/jan-guenter/bluemap-little-big-redstone-addon'
+        def exactProductionRuntime = release.exact_production_runtime
         if (release.status != 'owner-accepted-release-candidate'
                 || release.version != project.version.toString()
                 || release.repository != expectedRepository
@@ -424,7 +464,11 @@ tasks.register('verifyReleaseMetadata') {
                 || !(release.accepted_staging_entries instanceof Map)
                 || release.accepted_staging_entries.isEmpty()
                 || !(release.final_release_artifacts instanceof Map)
-                || release.final_release_artifacts.isEmpty()) {
+                || release.final_release_artifacts.isEmpty()
+                || !(exactProductionRuntime instanceof Map)
+                || exactProductionRuntime.status != 'passed'
+                || exactProductionRuntime.sealed != true
+                || exactProductionRuntime.remaining_artifact_or_render_gap != false) {
             throw new GradleException('Release provenance is not sealed')
         }
 
@@ -469,6 +513,54 @@ tasks.register('verifyReleaseMetadata') {
                     || recorded.sha256 != expected.sha256) {
                 throw new GradleException("Release provenance mismatch for ${name}")
             }
+        }
+
+        def exactRuntimeJar = exactProductionRuntime.production_jar
+        def exactRuntimeEvidence = exactProductionRuntime.evidence
+        def exactRuntimeSource = exactProductionRuntime.source
+        def exactRuntimeState = exactProductionRuntime.runtime
+        def exactRuntimeGallery = exactProductionRuntime.gallery
+        def exactRuntimeRender = exactProductionRuntime.bounded_render
+        if (!(exactRuntimeJar instanceof Map)
+                || exactRuntimeJar.file_name != expectedArtifacts.production_jar.file_name
+                || exactRuntimeJar.size != expectedArtifacts.production_jar.size
+                || exactRuntimeJar.sha256 != expectedArtifacts.production_jar.sha256
+                || exactRuntimeJar.zip_integrity_passed != true
+                || exactRuntimeJar.on_disk_identity_passed != true
+                || !(exactRuntimeEvidence instanceof Map)
+                || exactRuntimeEvidence.summary_path != 'evidence/exact-production-summary.json'
+                || exactRuntimeEvidence.summary_sha256
+                    != 'dba10100e0ae6df4a8d0035ed09b9863dc567bb9570fb62143a57c71e8763ec9'
+                || exactRuntimeEvidence.checksum_manifest_path != 'SHA256SUMS'
+                || exactRuntimeEvidence.checksum_manifest_sha256
+                    != '1bca8a16c172deea9d5d2e0a667b50969f4aa45dc2385d77db122d0782cd735e'
+                || exactRuntimeEvidence.file_count != 128
+                || exactRuntimeEvidence.checksum_check_passed != true
+                || !(exactRuntimeSource instanceof Map)
+                || exactRuntimeSource.commit
+                    != 'c2540e8eeca9ddb23be5c65d77b69c8967d1f8ae'
+                || exactRuntimeSource.tree
+                    != '2f9cb8c28504c961a96e76f8a3154418e420a917'
+                || exactRuntimeSource.signed_commit_verified != true
+                || !(exactRuntimeState instanceof Map)
+                || exactRuntimeState.status != 'passed'
+                || exactRuntimeState.pod_restart_count != 0
+                || exactRuntimeState.addon_load_markers != 1
+                || exactRuntimeState.addon_active_markers != 1
+                || exactRuntimeState.addon_inactive_markers != 0
+                || exactRuntimeState.addon_fallback_markers != 0
+                || !(exactRuntimeGallery instanceof Map)
+                || exactRuntimeGallery.status != 'passed'
+                || exactRuntimeGallery.case_count != 17
+                || exactRuntimeGallery.post_verification_failures != 0
+                || !(exactRuntimeRender instanceof Map)
+                || exactRuntimeRender.status != 'passed'
+                || exactRuntimeRender.complete_tile_count != 4
+                || exactRuntimeRender.all_tiles_fresh_after_command != true
+                || exactRuntimeRender
+                    .compressed_and_decoded_tiles_byte_identical_to_accepted_overlay
+                    != true) {
+            throw new GradleException('Exact production runtime provenance mismatch')
         }
     }
 }
