@@ -3,15 +3,23 @@
 A Java 21 add-on for the exact BlueMap 5.23 feature backport and the
 `little-big-redstone-1.9.8-mc1.21.1` profile in All the Mons `1.2.0`.
 
-Status: `0.1.0-alpha.3` migrates the owner-accepted renderer to BlueMap commit
-`7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`. The exact artifact gate replaces the unsupported
-dynamic models for all sixteen colored microchips with static cubes using the
-installed top, side, and bottom textures.
+Status: `0.1.0-alpha.3` migrates the renderer to BlueMap commit
+`7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`. The owner accepted the full-pack
+BlueMap and Minecraft review on 2026-08-30, but that review used a 60,465-byte
+instrumented native-5.23 overlay with SHA-256
+`167565da6f6e3bd23b084a96f4a62ce99f071348d4a47f7e85dabe11b7a95441`.
+It did not run the production JAR. A separate sealed runtime gate for the exact
+production JAR must pass before merge, tagging, or publication.
+
+The exact artifact gate replaces the unsupported dynamic models for all
+sixteen colored microchips with static cubes using the installed top, side,
+and bottom textures.
 
 The alpha.3 candidate JAR is 60,091 bytes with SHA-256
 `0e5e4133980917d504fd5bac3c1776219ddc7d34353bb65810f2480170e57522`.
 Two clean Gradle 9.6.1 builds produced the same production JAR, sources JAR,
-POM, and Gradle module metadata bytes.
+POM, and Gradle module metadata bytes. Reproducible build output does not
+replace the pending runtime proof for that exact production JAR.
 
 ## Build
 

@@ -29,6 +29,42 @@
       "sha256": "2c275b3175b6d50380022d0bdf7b40cd26114da1b05e8f50c6aafff8a1090bf7"
     }
   },
+  "owner_accepted_native_overlay": {
+    "accepted_at": "2026-08-30",
+    "visual_acceptance": true,
+    "artifact_role": "instrumented-native-5.23-overlay",
+    "file_name": "bluemap-little-big-redstone-addon-0.1.0-alpha.1.jar",
+    "size": 60465,
+    "sha256": "167565da6f6e3bd23b084a96f4a62ce99f071348d4a47f7e85dabe11b7a95441",
+    "production_jar_directly_reviewed": false,
+    "non_manifest_entries": 23,
+    "entries_identical_to_production": 22,
+    "differing_entry": "io/github/janguenter/bluemap/littlebigredstone/BlueMapLittleBigRedstoneAddon.class"
+  },
+  "accepted_native_integration_evidence": {
+    "run_id": "bluemap-atmons-integration-20260830-lbr-523-native",
+    "scope": "All the Mons 1.2.0 full 51-add-on integration",
+    "status": "passed",
+    "summary_path": "evidence/integration-summary.json",
+    "summary_sha256": "fcc1984e1446ed5dc6f84bd1828bbdd0ed96a4447d92e80fbbd837443577f2f5",
+    "checksum_manifest_path": "SHA256SUMS",
+    "checksum_manifest_sha256": "37130602cf6b995ff675d3573d6d48e2f03d05dcb1e2581e1bee16bc96a847b1",
+    "source_commit": "c2540e8eeca9ddb23be5c65d77b69c8967d1f8ae",
+    "source_tree": "2f9cb8c28504c961a96e76f8a3154418e420a917",
+    "candidate_production_jar_size": 60091,
+    "candidate_production_jar_sha256": "0e5e4133980917d504fd5bac3c1776219ddc7d34353bb65810f2480170e57522",
+    "staged_overlay_size": 60465,
+    "staged_overlay_sha256": "167565da6f6e3bd23b084a96f4a62ce99f071348d4a47f7e85dabe11b7a95441",
+    "gate_mode": "local-native-523-entrypoint-overlay",
+    "production_jar_runtime_proof": false
+  },
+  "exact_production_runtime": {
+    "status": "pending",
+    "required_before_merge_tag_or_release": true,
+    "production_jar_size": 60091,
+    "production_jar_sha256": "0e5e4133980917d504fd5bac3c1776219ddc7d34353bb65810f2480170e57522",
+    "reason": "The accepted native integration used an instrumented entrypoint overlay rather than the production JAR."
+  },
   "baseline_release": {
     "version": "0.1.0-alpha.2",
     "tag": "v0.1.0-alpha.2",
@@ -114,6 +150,8 @@
     "package_normalized_renderer_parity_gate": true,
     "gradle_9_6_1_clean_builds": 2,
     "same_toolchain_reproducibility_files": 4,
-    "consumer_tests_passed": 3
+    "consumer_tests_passed": 3,
+    "owner_accepted_native_overlay": true,
+    "exact_production_jar_runtime_passed": false
   }
 }
