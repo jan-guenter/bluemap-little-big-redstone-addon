@@ -10,6 +10,8 @@
   the local runtime-identity, registry, and extension-factory copies.
 - Preserve the microchip catalog, installed-texture model construction,
   exact-artifact admission, gallery, and stock fallback.
+- Pin candidate, CI, and release artifact generation to Gradle `9.6.1` so the
+  recorded module metadata remains reproducible.
 
 ## 0.1.0-alpha.2 - 2026-08-30
 

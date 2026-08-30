@@ -26,7 +26,7 @@
     "gradle_module": {
       "file_name": "bluemap-little-big-redstone-addon-0.1.0-alpha.3.module.json",
       "size": 2901,
-      "sha256": "b4955117a91056ea8230163038ffb819624bb84ab78a00ac82d9c5e213102fb2"
+      "sha256": "2c275b3175b6d50380022d0bdf7b40cd26114da1b05e8f50c6aafff8a1090bf7"
     }
   },
   "baseline_release": {
@@ -112,7 +112,7 @@
     "exact_feature_backport_runtime_identity_gate": true,
     "gallery_archive_exact_byte_gate": true,
     "package_normalized_renderer_parity_gate": true,
-    "gradle_9_4_clean_builds": 2,
+    "gradle_9_6_1_clean_builds": 2,
     "same_toolchain_reproducibility_files": 4,
     "consumer_tests_passed": 3
   }

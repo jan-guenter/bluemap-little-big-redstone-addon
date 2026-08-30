@@ -10,7 +10,7 @@ installed top, side, and bottom textures.
 
 The alpha.3 candidate JAR is 60,091 bytes with SHA-256
 `0e5e4133980917d504fd5bac3c1776219ddc7d34353bb65810f2480170e57522`.
-Two clean Gradle 9.4.0 builds produced the same production JAR, sources JAR,
+Two clean Gradle 9.6.1 builds produced the same production JAR, sources JAR,
 POM, and Gradle module metadata bytes.
 
 ## Build
@@ -32,7 +32,8 @@ git submodule update --init --recursive -- \
 
 The settings preflight accepts only the exact toolkit, runtime, and Adapter API
 gitlinks and source trees. An uninitialized, changed, or dirty submodule fails
-before project evaluation.
+before project evaluation. It also rejects every Gradle version other than
+`9.6.1`, because Gradle module metadata is tool-version-sensitive.
 
 ```bash
 gradle --no-daemon -PbluemapSourcePath=../bluemap-backport clean check build

@@ -26,6 +26,10 @@ The Adapter API gitlink pins `v0.1.0-alpha.2` commit
 `2f974c9bb2ba13888d69682f86f30f58922d30eb`. Its four Java sources compile
 into this add-on. Do not install or bundle its module JAR.
 
+Use Gradle `9.6.1` for every candidate and promotion build. The settings
+preflight rejects other Gradle versions because they can change generated
+Gradle module metadata without changing the Java artifacts.
+
 ## Prototype
 
 Acquire and verify the exact candidate JARs outside Git. Their Gradle

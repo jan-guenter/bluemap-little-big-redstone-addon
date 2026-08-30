@@ -14,7 +14,7 @@ After the owner accepts the candidate:
    `bluemap-addon-toolkit jar-entries write` command.
 4. Change `addon_version` from the SNAPSHOT to its final version through a PR.
 5. Build production JAR, sources JAR, POM, and Gradle module metadata with the
-   exact promotion Java/Gradle/BlueMap inputs.
+   exact promotion Java, Gradle `9.6.1`, and BlueMap inputs.
 6. Put their exact sizes and SHA-256 values in `gradle.properties` and complete
    `provenance/release.json`.
 7. Run `verifyReleaseCandidate -PreleaseTag=v<version>` with all exact candidate

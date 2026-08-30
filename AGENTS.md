@@ -10,6 +10,7 @@ changing it.
 - Minecraft `1.21.1`
 - NeoForge `21.1.248`
 - Java `21`
+- Gradle `9.6.1` for candidate and release artifact identity
 - BlueMap 5.23 feature backport
   `5.22-feature.backport-5.23-stateless-java-web-server-46`, commit
   `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`
