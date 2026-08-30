@@ -8,8 +8,12 @@ Status: `0.1.0-alpha.3` migrates the renderer to BlueMap commit
 BlueMap and Minecraft review on 2026-08-30, but that review used a 60,465-byte
 instrumented native-5.23 overlay with SHA-256
 `167565da6f6e3bd23b084a96f4a62ce99f071348d4a47f7e85dabe11b7a95441`.
-It did not run the production JAR. A separate sealed runtime gate for the exact
-production JAR must pass before merge, tagging, or publication.
+It did not run the production JAR. A later sealed gate ran the exact production
+JAR in the same 51-add-on staging pack. The clean boot activated the add-on,
+the 17-case gallery passed, and all four freshly rendered LBR storage tiles
+matched the accepted overlay in compressed and decoded bytes. This closes the
+artifact gap without claiming that the owner directly reviewed the production
+JAR.
 
 The exact artifact gate replaces the unsupported dynamic models for all
 sixteen colored microchips with static cubes using the installed top, side,
@@ -18,8 +22,8 @@ and bottom textures.
 The alpha.3 candidate JAR is 60,091 bytes with SHA-256
 `0e5e4133980917d504fd5bac3c1776219ddc7d34353bb65810f2480170e57522`.
 Two clean Gradle 9.6.1 builds produced the same production JAR, sources JAR,
-POM, and Gradle module metadata bytes. Reproducible build output does not
-replace the pending runtime proof for that exact production JAR.
+POM, and Gradle module metadata bytes. The exact identities and the sealed
+runtime evidence hashes are recorded in `provenance/release.json`.
 
 ## Build
 

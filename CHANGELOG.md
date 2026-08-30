@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0-alpha.3 - 2026-08-30
+## 0.1.0-alpha.3 - 2026-08-31
 
 - Target only BlueMap feature-backport commit
   `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac` and API commit
@@ -12,6 +12,8 @@
   exact-artifact admission, gallery, and stock fallback.
 - Pin candidate, CI, and release artifact generation to Gradle `9.6.1` so the
   recorded module metadata remains reproducible.
+- Record owner acceptance of the instrumented native-5.23 overlay separately
+  from the later sealed runtime PASS for the exact production JAR.
 
 ## 0.1.0-alpha.2 - 2026-08-30
 

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "status": "unpublished-migration-candidate",
+  "status": "owner-accepted-release-candidate",
   "published": false,
   "version": "0.1.0-alpha.3",
-  "release_date": "2026-08-30",
+  "release_date": "2026-08-31",
   "repository": "https://github.com/jan-guenter/bluemap-little-big-redstone-addon",
   "tag": "v0.1.0-alpha.3",
   "maven_coordinate": "io.github.jan-guenter:bluemap-little-big-redstone-addon:0.1.0-alpha.3",
@@ -29,7 +29,35 @@
       "sha256": "2c275b3175b6d50380022d0bdf7b40cd26114da1b05e8f50c6aafff8a1090bf7"
     }
   },
-  "owner_accepted_native_overlay": {
+  "accepted_staging_entries": {
+    "path": "provenance/accepted-staging-entries.sha256",
+    "entry_count": 23,
+    "sha256": "b0e0cb9e6a58d01e9973236ea88e07d672a529bf7af7d5bfa819d4ad6f936582",
+    "artifact_role": "exact-production-jar"
+  },
+  "final_release_artifacts": {
+    "production_jar": {
+      "file_name": "bluemap-little-big-redstone-addon-0.1.0-alpha.3.jar",
+      "size": 60091,
+      "sha256": "0e5e4133980917d504fd5bac3c1776219ddc7d34353bb65810f2480170e57522"
+    },
+    "sources_jar": {
+      "file_name": "bluemap-little-big-redstone-addon-0.1.0-alpha.3-sources.jar",
+      "size": 43494,
+      "sha256": "4442599b8a68bc90cd13a8fb9400e0469e81be46e43b6a750a9ccb5b69aa9dcc"
+    },
+    "pom": {
+      "file_name": "bluemap-little-big-redstone-addon-0.1.0-alpha.3.pom",
+      "size": 1389,
+      "sha256": "7af1ee90333e53d5265e8f8ac2061ee1da847935e87477fb83d16bc4d97e9f05"
+    },
+    "gradle_module": {
+      "file_name": "bluemap-little-big-redstone-addon-0.1.0-alpha.3.module.json",
+      "size": 2901,
+      "sha256": "2c275b3175b6d50380022d0bdf7b40cd26114da1b05e8f50c6aafff8a1090bf7"
+    }
+  },
+  "owner_accepted_staging": {
     "accepted_at": "2026-08-30",
     "visual_acceptance": true,
     "artifact_role": "instrumented-native-5.23-overlay",
@@ -59,11 +87,72 @@
     "production_jar_runtime_proof": false
   },
   "exact_production_runtime": {
-    "status": "pending",
+    "status": "passed",
+    "sealed": true,
     "required_before_merge_tag_or_release": true,
-    "production_jar_size": 60091,
-    "production_jar_sha256": "0e5e4133980917d504fd5bac3c1776219ddc7d34353bb65810f2480170e57522",
-    "reason": "The accepted native integration used an instrumented entrypoint overlay rather than the production JAR."
+    "run_id": "bluemap-atmons-exact-lbr-production-20260830",
+    "evidence": {
+      "summary_path": "evidence/exact-production-summary.json",
+      "summary_sha256": "dba10100e0ae6df4a8d0035ed09b9863dc567bb9570fb62143a57c71e8763ec9",
+      "checksum_manifest_path": "SHA256SUMS",
+      "checksum_manifest_sha256": "1bca8a16c172deea9d5d2e0a667b50969f4aa45dc2385d77db122d0782cd735e",
+      "file_count": 128,
+      "checksum_check_passed": true
+    },
+    "source": {
+      "commit": "c2540e8eeca9ddb23be5c65d77b69c8967d1f8ae",
+      "tree": "2f9cb8c28504c961a96e76f8a3154418e420a917",
+      "signed_commit_verified": true
+    },
+    "production_jar": {
+      "file_name": "bluemap-little-big-redstone-addon-0.1.0-alpha.3.jar",
+      "installed_file_name": "bluemap-little-big-redstone-addon-0.1.0-alpha.1.jar",
+      "size": 60091,
+      "sha256": "0e5e4133980917d504fd5bac3c1776219ddc7d34353bb65810f2480170e57522",
+      "zip_integrity_passed": true,
+      "on_disk_identity_passed": true
+    },
+    "runtime": {
+      "status": "passed",
+      "boot_id": "6301e608-c398-4aec-8dd8-cf5d26e6bf5c",
+      "attestation_sha256": "b6c8f0193bcf7f944d9bc098e1c455023b451f59f5dbaa84997da74f0c9fff13",
+      "runtime_jar_count": 377,
+      "candidate_pack_count": 51,
+      "pod_restart_count": 0,
+      "addon_load_markers": 1,
+      "addon_active_markers": 1,
+      "addon_inactive_markers": 0,
+      "addon_fallback_markers": 0,
+      "resources_loaded_markers": 1
+    },
+    "gallery": {
+      "status": "passed",
+      "case_count": 17,
+      "mirrored_checks": 17,
+      "completion_score": 1,
+      "pre_verification_failures": 0,
+      "post_verification_failures": 0
+    },
+    "bounded_render": {
+      "status": "passed",
+      "complete_tile_count": 4,
+      "exclusive_tile_count": 0,
+      "all_tiles_fresh_after_command": true,
+      "compressed_and_decoded_tiles_byte_identical_to_accepted_overlay": true,
+      "overlap_limitation": "All four padded LBR storage tiles also intersect Botany Pots, Laser Bridges, or Modular Routers; there is no exclusive LBR tile subset."
+    },
+    "full_51_marker_suite_under_exact_production_jar": false,
+    "suite_boundary_reason": "The exact production Little Big Redstone and Pipez entrypoints intentionally omit integration markers; the passing two-boot 51-marker overlay suite was not weakened or rerun under the uninstrumented artifacts.",
+    "linked_passing_overlay_suite_sha256": "0ae94aa1cbfe60231e569fdd4437d12b6ba286c01ab0d8958e8e498227cd8719",
+    "remaining_artifact_or_render_gap": false
+  },
+  "staged_equivalence": {
+    "owner_reviewed_overlay_entries": 23,
+    "exact_production_entries": 23,
+    "identical_non_manifest_entries": 22,
+    "whole_jar_byte_identical": false,
+    "differing_entry": "io/github/janguenter/bluemap/littlebigredstone/BlueMapLittleBigRedstoneAddon.class",
+    "artifact_gap_closed_by_exact_production_runtime": true
   },
   "baseline_release": {
     "version": "0.1.0-alpha.2",
@@ -152,6 +241,8 @@
     "same_toolchain_reproducibility_files": 4,
     "consumer_tests_passed": 3,
     "owner_accepted_native_overlay": true,
-    "exact_production_jar_runtime_passed": false
+    "exact_production_jar_runtime_passed": true,
+    "exact_production_evidence_sealed": true,
+    "remaining_artifact_or_render_gap": false
   }
 }
