@@ -7,8 +7,8 @@ package io.github.janguenter.bluemap.littlebigredstone.adapter.bluemap522;
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.ResourcePack;
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.ResourcePackExtension;
 import de.bluecolored.bluemap.core.util.Key;
+import io.github.janguenter.bluemap.addon.runtime.artifact.ExactArtifactDetector;
 import io.github.janguenter.bluemap.littlebigredstone.activation.AddonRuntime;
-import io.github.janguenter.bluemap.littlebigredstone.profile.ExactArtifactDetector;
 import io.github.janguenter.bluemap.littlebigredstone.profile.LittleBigRedstone198Profile;
 
 import java.nio.file.Path;

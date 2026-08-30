@@ -4,6 +4,8 @@
 
 package io.github.janguenter.bluemap.littlebigredstone.profile;
 
+import io.github.janguenter.bluemap.addon.runtime.artifact.ArtifactPin;
+
 import java.util.List;
 
 /** Exact All the Mons 1.2.0 profile `little-big-redstone-1.9.8-mc1.21.1`. */
