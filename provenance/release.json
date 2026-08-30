@@ -1,7 +1,6 @@
 {
   "schema_version": 1,
   "status": "owner-accepted-release-candidate",
-  "published": false,
   "version": "0.1.0-alpha.3",
   "release_date": "2026-08-31",
   "repository": "https://github.com/jan-guenter/bluemap-little-big-redstone-addon",
